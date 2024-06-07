@@ -2,19 +2,26 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 
-const parent = React.createElement("div", {id: "parent"},[
-    React.createElement("div", {id : "child"}, 
-[React.createElement("h1", {}, "hello world"),
-React.createElement("h2", {}, "hello world 2")]
+const HeadingComponent = () => (
+    <>
+    <h1>Hello form heading componet</h1>
+    <Component2/>
+    </>
+   
 )
-],[
-    React.createElement("div", {id : "child2"}, 
-[React.createElement("h1", {}, "hello world"),
-React.createElement("h2", {}, "hello world 2")]
-)
-]
+   
+    
 
-)
+
+const Component2 = () => <h1>hello form HeadingComponent2</h1>
+
+
+
+const jsxheading = <h1 id="heading" className="header" tabIndex={1}>hello JSX</h1>
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
-root.render(parent) 
+root.render(<HeadingComponent/>)
+
+
+
+ 
