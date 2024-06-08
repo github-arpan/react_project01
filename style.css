@@ -1,0 +1,32 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+.logo{
+    width:80px;
+}
+.nav-items{
+    display: flex;
+    align-items: center;
+}
+.nav-items ul{
+    display: flex;
+    align-items: center;
+}
+.nav-items ul li{
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+.search-bar{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.search-bar input {
+    height: 30px;
+    width: 400px;
+    margin-right: 5px;
+    
+}
