@@ -23,13 +23,13 @@ const Header = ()=>{
         </div>
     )
 }
-const RestaurantCard = () =>{
+const RestaurantCard = (props) =>{
     return (
         <div className="res-card">
-            <img src="https://b.zmtcdn.com/data/pictures/0/19555650/b6718afb1079a1311a161454b97f1fbc.jpg?fit=around|771.75:416.25&crop=771.75:416.25;*,*"></img>
-            <h3>Meghana Foods </h3>
-            <h4>Paneer Kabab, North Indian</h4>
-            <h4>4 stars</h4>
+            <img src={props.foodImg}></img>
+            <h3>{props.resName}</h3>
+            <h4>{props.cuisine}</h4>
+            <h4>{props.stars}</h4>
             <h4>30 minutes</h4>
         </div>
     )
@@ -42,23 +42,11 @@ return (
             <button>Search</button>
         </div>
         <div className="res-container">
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/> <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
+            <RestaurantCard resName="Food Park" cuisine="North indian, Bengali" stars="4.1 stars" foodImg="https://b.zmtcdn.com/data/pictures/chains/2/19418342/ea0909f4b70016f3c3b0104dca9300bc_o2_featured_v2.jpg"/>
+
+            <RestaurantCard resName="Dada Boudi Biryani" cuisine="Biryani, Bengali" stars="4.3 stars" foodImg="https://b.zmtcdn.com/data/dish_photos/89d/0c686bb9cbbe609dd5a52b066764189d.jpg?output-format=webp"/>
+            <RestaurantCard resName="D Bapi Biryani" cuisine="Biryani, Bengali" stars="4.1 stars" foodImg="https://b.zmtcdn.com/data/dish_photos/89d/0c686bb9cbbe609dd5a52b066764189d.jpg?output-format=webp"/>
+           
         </div>
     </div>
     
