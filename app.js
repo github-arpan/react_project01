@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { resList } from "./reslist";
 
 
 const Header = ()=>{
@@ -23,17 +24,25 @@ const Header = ()=>{
         </div>
     )
 }
+
+
+
 const RestaurantCard = (props) =>{
+    const{resData} = props;
+    const {name, cuisines, avgRating, sla, cloudinaryImageId} = resData?.info
     return (
         <div className="res-card">
-            <img src={props.foodImg}></img>
-            <h3>{props.resName}</h3>
-            <h4>{props.cuisine}</h4>
-            <h4>{props.stars}</h4>
-            <h4>30 minutes</h4>
+            <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId} />
+           
+            <h3>{name}</h3>
+            <h4>{cuisines.join(", ")}</h4>
+            <h4>{avgRating}</h4>
+            <h4>delivery in {sla.deliveryTime} minutes</h4>
+    
         </div>
     )
 }
+
 const Body = () =>{
 return (
     <div className="body">
@@ -42,10 +51,14 @@ return (
             <button>Search</button>
         </div>
         <div className="res-container">
-            <RestaurantCard resName="Food Park" cuisine="North indian, Bengali" stars="4.1 stars" foodImg="https://b.zmtcdn.com/data/pictures/chains/2/19418342/ea0909f4b70016f3c3b0104dca9300bc_o2_featured_v2.jpg"/>
-
-            <RestaurantCard resName="Dada Boudi Biryani" cuisine="Biryani, Bengali" stars="4.3 stars" foodImg="https://b.zmtcdn.com/data/dish_photos/89d/0c686bb9cbbe609dd5a52b066764189d.jpg?output-format=webp"/>
-            <RestaurantCard resName="D Bapi Biryani" cuisine="Biryani, Bengali" stars="4.1 stars" foodImg="https://b.zmtcdn.com/data/dish_photos/89d/0c686bb9cbbe609dd5a52b066764189d.jpg?output-format=webp"/>
+            <RestaurantCard resData = {resList[1]}/>
+            <RestaurantCard resData = {resList[2]}/>
+            <RestaurantCard resData = {resList[3]}/>
+            <RestaurantCard resData = {resList[4]}/>
+            <RestaurantCard resData = {resList[5]}/>
+            <RestaurantCard resData = {resList[6]}/>
+            <RestaurantCard resData = {resList[7]}/>
+            <RestaurantCard resData = {resList[8]}/>
            
         </div>
     </div>
