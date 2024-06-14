@@ -9,9 +9,16 @@
     border-bottom: 1px solid black;
     padding: 0 20px;
 }
+.loginbtn{
+    padding: 3px 8px;
+    background-color: rgb(17, 189, 77);
+    color: white;
+    border: 1px solid black;
+}
+
 .filter{
-    margin: 0 0 10px 12%;
-   
+    
+    margin-left: 12%;
 }
 .filterBtn{
     padding: 8px 5px;

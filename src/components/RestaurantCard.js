@@ -24,8 +24,6 @@ const RestaurantCard = (props) =>{
                     </div>
                     <p>{costForTwo}</p>
                 </div>
-               
-                
             </div>
             
         </div>
