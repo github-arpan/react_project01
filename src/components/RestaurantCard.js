@@ -2,12 +2,16 @@ import { CDN_URL } from "../utils/contants";
 
 const RestaurantCard = (props) =>{
     const{resData} = props;
-    const {name, cuisines, avgRating, sla, costForTwo, cloudinaryImageId} = resData?.info
+    const {name, cuisines, avgRating, sla, costForTwo, cloudinaryImageId
+    } = resData.info
     return (
         <div className="res-card">
             <div className="res-img">
                 <img src={CDN_URL+ cloudinaryImageId} />
+                {console.log(resData.info.cloudinaryImageId)}
+                
             </div>
+
             <div className="res-text">
                 <div className="res-title">
                     <h4>{name}</h4>
@@ -19,7 +23,7 @@ const RestaurantCard = (props) =>{
                 <div className="res-content">
                     
                     <div className="content-bottom">
-                        <p id="cuisines">{cuisines.join(", ")}</p>
+                        <p id="cuisines" >{cuisines.join(", ")}</p>
                         <p id="deliveryTime">{sla.slaString} </p>
                     </div>
                     <p>{costForTwo}</p>
