@@ -3,12 +3,12 @@ import { CDN_URL } from "../utils/contants";
 const RestaurantCard = (props) =>{
     const{resData} = props;
     const {name, cuisines, avgRating, sla, costForTwo, cloudinaryImageId
-    } = resData.info
+    } = resData.info;
     return (
         <div className="res-card">
             <div className="res-img">
                 <img src={CDN_URL+ cloudinaryImageId} />
-                {console.log(resData.info.cloudinaryImageId)}
+        
                 
             </div>
 

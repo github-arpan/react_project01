@@ -25,6 +25,8 @@ export const Body = () =>{
         
           const restaurants = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
           setListOfRestaurant(restaurants);
+          setFilteredRestaurant(restaurants)
+          {console.log(restaurants.info)}
           
           
         } catch (error) {
@@ -50,7 +52,7 @@ export const Body = () =>{
                         res.info.name.toLowerCase().includes(searchText.toLowerCase())
                         
                     })
-                    setListOfRestaurant(filteredRestaurant)
+                    setFilteredRestaurant(filteredRestaurant)
                     console.log(searchText);
                     
                 }}>Search</button>
@@ -60,9 +62,13 @@ export const Body = () =>{
             <div className="filter">
                 <button className="filterBtn" onClick={() => {
                     const filteredList = listOfRestaurants.filter(
-                        (res)=> res.info.avgRating > 4
+                        (res)=> res.info.avgRating >  4
                     );
                     setFilteredRestaurant(filteredList)
+                    
+                    
+                    
+
                    
                 }}>Top Rated</button>
             </div>
