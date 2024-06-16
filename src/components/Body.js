@@ -1,5 +1,4 @@
 import RestaurantCard from "./RestaurantCard.js";
-import resList from "../utils/mockData.js";
 import { useEffect, useState } from "react";
 import { API_URL, CDN_URL } from "../utils/contants.js";
 import Shimmer from "./Shimmer.js";
@@ -18,7 +17,7 @@ export const Body = () =>{
     const fetchData = async () => {
         try {
           const response = await fetch(API_URL);
-      
+       
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
           }
@@ -54,8 +53,6 @@ export const Body = () =>{
                         
                     )
                     setFilteredRestaurant(filteredRestaurant)
-                   
-                    
                 }}>Search</button>
             </div>
             
@@ -66,10 +63,6 @@ export const Body = () =>{
                         (res)=> res.info.avgRating >  4
                     );
                     setFilteredRestaurant(filteredList)
-                    
-                  
-                    
-                    
                 }}>Top Rated</button>
             </div>
             <div className="res-container">
