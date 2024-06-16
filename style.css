@@ -131,3 +131,20 @@
     height: 12.8rem;
     object-fit:cover
 }
+/* shimmer ui  */
+.shimmerContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.shimmer-cards{
+    width: 250px;
+    height: 250px;
+    border-radius: 5%;
+    margin: 20px 10px;
+    
+    background-color: #f0f0f0;
+}

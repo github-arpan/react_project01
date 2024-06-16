@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard.js";
 import resList from "../utils/mockData.js";
 import { useEffect, useState } from "react";
 import { API_URL, CDN_URL } from "../utils/contants.js";
+import Shimmer from "./Shimmer.js";
 
 
 export const Body = () =>{
@@ -25,8 +26,7 @@ export const Body = () =>{
         
           const restaurants = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
           setListOfRestaurant(restaurants);
-          setFilteredRestaurant(restaurants)
-          {console.log(restaurants.info)}
+          setFilteredRestaurant(restaurants);
           
           
         } catch (error) {
@@ -34,8 +34,9 @@ export const Body = () =>{
           
         }
       };
-      
-    return (
+    
+
+    return listOfRestaurants.length === 0 ? <Shimmer/> : (
 
         <div className="body">
 
@@ -48,12 +49,12 @@ export const Body = () =>{
                 }}
                 />
                 <button onClick={()=>{
-                    const filteredRestaurant = listOfRestaurants.filter((res)=>{
+                    const filteredRestaurant = listOfRestaurants.filter((res)=>
                         res.info.name.toLowerCase().includes(searchText.toLowerCase())
                         
-                    })
+                    )
                     setFilteredRestaurant(filteredRestaurant)
-                    console.log(searchText);
+                   
                     
                 }}>Search</button>
             </div>
@@ -66,16 +67,15 @@ export const Body = () =>{
                     );
                     setFilteredRestaurant(filteredList)
                     
+                  
                     
                     
-
-                   
                 }}>Top Rated</button>
             </div>
             <div className="res-container">
                 
             {   
-                listOfRestaurants.map(Restaurant => <RestaurantCard key={Restaurant.info?.id} resData={Restaurant} />,
+                filteredRestaurant.map(Restaurant => <RestaurantCard key={Restaurant.info?.id} resData={Restaurant} />,
                     
                  )
                }    
