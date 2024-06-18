@@ -154,3 +154,15 @@
     
     background-color: #f0f0f0;
 }
+.menu-container{
+display: flex;
+justify-content: flex-start;
+}
+.resMenu{
+    width: 80%;
+    margin: 10px 10%;
+}
+.resMenu li {
+    list-style-type: none;
+    margin: 5px 0;
+}

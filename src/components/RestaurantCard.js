@@ -1,4 +1,5 @@
 import { CDN_URL } from "../utils/contants";
+import { FaStar } from "react-icons/fa";
 
 const RestaurantCard = (props) =>{
     const{resData} = props;
@@ -16,7 +17,7 @@ const RestaurantCard = (props) =>{
                 <div className="res-title">
                     <h4>{name}</h4>
                     <div>
-                        <i className="starIcon" class="fa-solid fa-star"></i>
+                        <FaStar />
                         {avgRating}
                         </div>
                 </div>
