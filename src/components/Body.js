@@ -27,7 +27,7 @@ export const Body = () =>{
           const restaurants = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
           setListOfRestaurant(restaurants);
           setFilteredRestaurant(restaurants);
-          
+          console.log(listOfRestaurants);
           
         } catch (error) {
           console.error("Error fetching data:", error);
@@ -36,7 +36,7 @@ export const Body = () =>{
       };
     
 
-    return listOfRestaurants.length === 0 ? <Shimmer/> : (
+    return listOfRestaurants?.length === 0 ? <Shimmer/> : (
 
         <div className="body">
 

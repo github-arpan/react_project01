@@ -4,7 +4,9 @@ import { FaStar } from "react-icons/fa";
 const RestaurantCard = (props) =>{
     const{resData} = props;
     const {name, cuisines, avgRating, sla, costForTwo, cloudinaryImageId
+
     } = resData.info;
+    
     return (
         <div className="res-card">
             <div className="res-img">
@@ -17,8 +19,8 @@ const RestaurantCard = (props) =>{
                 <div className="res-title">
                     <h4>{name}</h4>
                     <div>
-                        <FaStar />
-                        {avgRating}
+                        <FaStar className="star" />
+                        {avgRating} 
                         </div>
                 </div>
                 <div className="res-content">

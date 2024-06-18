@@ -1,7 +1,10 @@
+import AboutInfo from "./aboutInfo.";
+
 const About = () =>{
     return (
-        <div>
+        <div className="about">
             <h1>About</h1>
+            <AboutInfo name={"Arpan Chakraborty"}/>
         </div>
 
     )
