@@ -1,6 +1,6 @@
 import {useState, useEffect } from "react";
 import { CDN_URL, MENU_API_URL } from "../utils/contants";
-import {Form, useParams} from "react-router-dom"
+import {useParams} from "react-router-dom"
 import { FaStar } from "react-icons/fa";
 import Shimmer from "./Shimmer"
 import { MdOutlineCurrencyRupee } from "react-icons/md";

@@ -1,10 +1,10 @@
-import AboutInfo from "./aboutInfo.";
+import AboutInfoClass from "./aboutInfo.";
 
 const About = () =>{
     return (
         <div className="about">
             <h1>About</h1>
-            <AboutInfo name={"Arpan Chakraborty"}/>
+            <AboutInfoClass name={"Arpan Chakraborty"} location ={"Barasat , West Bengal"}/>
         </div>
 
     )
