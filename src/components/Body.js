@@ -23,11 +23,11 @@ export const Body = () =>{
             throw new Error(`HTTP error! status: ${response.status}`);
           }
           const json = await response.json();
-        
+          console.log(json);
           const restaurants = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
           setListOfRestaurant(restaurants);
           setFilteredRestaurant(restaurants);
-          console.log(listOfRestaurants);
+          
           
         } catch (error) {
           console.error("Error fetching data:", error);
@@ -68,7 +68,7 @@ export const Body = () =>{
             </div>
             <div className="res-container">
             {   
-            filteredRestaurant.map((Restaurant) => ( <Link key={Restaurant.info?.id} to={ "/restaurants/" + Restaurant.info?.id } className="link">
+            filteredRestaurant?.map((Restaurant) => ( <Link key={Restaurant?.info?.id} to={ "/restaurants/" + Restaurant?.info?.id } className="link">
                 <RestaurantCard  resData={Restaurant} />
                 </Link>
                  

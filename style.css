@@ -195,12 +195,33 @@ justify-content: flex-start;
 .menu-description{
     margin-top: 10px ;
     padding-bottom: 30px;
-    border-bottom: 1px solid #1C1C1C;
+    
 }
 .menu-list-header{
-
+    display: flex;
+    justify-content: space-between;
+    
+    border-bottom: 1px solid rgba(40, 44, 63, 0.2 );
+}
+.menu-list-price{
     font-size: 18px;
     font-weight: bold;
+}
+.menu-list-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.rupee-icon{
+    padding-top: 5px;
+    margin-top: 3px;
+    font-size: 19px ;
+}
+.menu-list-img{
+    height: 144px;
+    width: 156px;
+    border-radius: 10%;
+    object-fit: cover;
 }
 /* ------------about---------- */
 .about{
