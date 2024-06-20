@@ -8,19 +8,25 @@ class AboutInfoClass extends React.Component{
             count : 0
         }
     }
+     
         
     render() {
         const {name, location} = this.props
+        const {count} = this.state
+        
         return (
             <div>
-                <h2>count : {this.state.count}</h2>
+                <h2>count : {count}</h2>
+                <button onClick={()=>{
+                    this.setState({count : this.state.count +1 }) 
+                }}>click</button>
                 <h2>{name}</h2>
                 <h2>{location}</h2>
             </div>
         )
     }
 }
-export default AboutInfoClass
+export default AboutInfoClass;
 
 // const AboutInfo = ({name}) =>{
 //     return (
