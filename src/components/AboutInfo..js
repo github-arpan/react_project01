@@ -1,30 +1,41 @@
 import React from "react";
 
-class AboutInfoClass extends React.Component{
-    constructor(props){
-        super(props)
-    
-        this.state = {
-            count : 0
-        }
-    }
-     
-        
-    render() {
-        const {name, location} = this.props
-        const {count} = this.state
-        
-        return (
-            <div>
-                <h2>count : {count}</h2>
-                <button onClick={()=>{
-                    this.setState({count : this.state.count +1 }) 
-                }}>click</button>
-                <h2>{name}</h2>
-                <h2>{location}</h2>
-            </div>
-        )
-    }
+class AboutInfoClass extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      count: 0,
+    };
+  }
+  componentDidMount() {
+    this.timer = setInterval(() => {
+      console.log("namaste");
+    }, 1000);
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
+
+  render() {
+    const { name, location } = this.props;
+    const { count } = this.state;
+
+    return (
+      <div>
+        <h2>count : {count}</h2>
+        <button
+          onClick={() => {
+            this.setState({ count: this.state.count + 1 });
+          }}
+        >
+          click
+        </button>
+        <h2>{name}</h2>
+        <h2>{location}</h2>
+      </div>
+    );
+  }
 }
 export default AboutInfoClass;
 

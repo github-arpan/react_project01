@@ -1,4 +1,4 @@
-import AboutInfoClass from "./aboutInfo.";
+import AboutInfoClass from "./AboutInfo.";
 
 const About = () =>{
     return (
