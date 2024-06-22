@@ -1,8 +1,9 @@
 import RestaurantCard from "./RestaurantCard.js";
 import { useEffect, useState } from "react";
-import { API_URL, CDN_URL } from "../utils/contants.js";
+import { API_URL } from "../utils/contants.js";
 import Shimmer from "./Shimmer.js";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus.js";
 
 export const Body = () => {
   const [listOfRestaurants, setListOfRestaurant] = useState([]);
@@ -31,6 +32,10 @@ export const Body = () => {
       console.error("Error fetching data:", error);
     }
   };
+
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false)
+    return alert("Connection lost! Please check your network.");
 
   return listOfRestaurants?.length === 0 ? (
     <Shimmer />
