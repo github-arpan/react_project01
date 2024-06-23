@@ -28,6 +28,9 @@ export const Header = () => {
             </Link>
           </li>
           <li>Cart</li>
+          <li>
+            <Link to="/grocery">Grocery</Link>
+          </li>
           <button
             className="loginbtn"
             onClick={() => {
