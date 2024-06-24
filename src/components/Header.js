@@ -10,9 +10,9 @@ export const Header = () => {
         <img className="w-20 " src={LOGO_URL} />
       </div>
 
-      <div className="flex items-center w-96 ">
-        <ul className="flex justify-evenly w-96 p-2 ">
-          <li className="mr-2">
+      <div className="flex items-center   ">
+        <ul className="flex justify-evenly w-[500px]  p-2 text-xl ">
+          <li className="">
             <Link to="/" className="link">
               Home
             </Link>

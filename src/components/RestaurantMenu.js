@@ -20,20 +20,20 @@ const RestaurantMenu = () => {
     sla,
   } = resInfo?.cards[2]?.card?.card?.info || {};
   const { itemCards } =
-    resInfo?.cards[4]?.groupedCard.cardGroupMap?.REGULAR?.cards[2]?.card
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
       ?.card || {};
   const { imageId } =
-    resInfo?.cards[4]?.groupedCard.cardGroupMap?.REGULAR?.cards[2]?.card?.card
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
       ?.itemCards?.card?.info || {};
 
   console.log(itemCards);
   if (resInfo === null) return <Shimmer />;
 
   return (
-    <div className="mx-[15%] my-2">
+    <div className="mx-[20%] my-2">
       <div className="resMenu">
         <div className="menu-header">
-          <h1 className="text-2xl my-2">{name} </h1>
+          <h1 className="text-3xl font-medium my-2">{name} </h1>
           <div className="menuHeader-content">
             <h3 className="flex items-center my-2 font-medium">
               <FaStar className="text-green-600" />
@@ -50,12 +50,12 @@ const RestaurantMenu = () => {
           </div>
         </div>
 
-        <h2 className="text-2xl my-4">Menu</h2>
+        <h2 className="text-3xl my-6">Menu</h2>
         <ul>
           {itemCards?.map((item) => (
-            <div key={item.card.info.id} className="menuList">
-              <div className="flex  ">
-                <div className="my-4">
+            <div key={item.card.info.id} className=" ">
+              <div className=" flex justify-between my-2">
+                <div className="my-4 max-w-[80%]">
                   <div className="menu-list-price">
                     <div className="font-medium">{item.card.info.name}</div>
                     <div className="flex items-center mb-2">
@@ -66,14 +66,12 @@ const RestaurantMenu = () => {
                     </div>
                   </div>
                   <div>
-                    <p className="truncate w-[30%]">
-                      {item.card.info.description}
-                    </p>
+                    <p className="  ">{item.card.info.description}</p>
                   </div>
                 </div>
-                <div>
+                <div className="h-[144px] w-[156px]">
                   <img
-                    className="w-[150px] rounded-lg"
+                    className="rounded-lg h-[144px] w-[156px]"
                     alt="menu photo"
                     src={CDN_URL + item.card.info.imageId}
                   />
