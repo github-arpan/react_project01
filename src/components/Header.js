@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 export const Header = () => {
   const [btnName, setBtnName] = useState("login");
   return (
-    <div className="header">
+    <div className="flex justify-between border-b border-black p-2 ">
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL} />
+        <img className="w-20 " src={LOGO_URL} />
       </div>
 
-      <div className="nav-items">
-        <ul>
-          <li>
+      <div className="flex items-center w-96 ">
+        <ul className="flex justify-evenly w-96 p-2 ">
+          <li className="mr-2">
             <Link to="/" className="link">
               Home
             </Link>
@@ -32,7 +32,7 @@ export const Header = () => {
             <Link to="/grocery">Grocery</Link>
           </li>
           <button
-            className="loginbtn"
+            className=""
             onClick={() => {
               btnName === "login" ? setBtnName("logout") : setBtnName("login");
             }}

@@ -7,23 +7,26 @@ const RestaurantCard = (props) => {
     resData.info;
 
   return (
-    <div className="res-card">
-      <div className="res-img">
-        <img src={CDN_URL + cloudinaryImageId} />
+    <div className=" m-2 p-2 w-[300px]">
+      <div className=" ">
+        <img
+          className=" h-[220px] w-[300px] object-cover rounded-xl "
+          src={CDN_URL + cloudinaryImageId}
+        />
       </div>
 
-      <div className="res-text">
-        <div className="res-title">
-          <h4>{name}</h4>
-          <div>
-            <FaStar className="star" />
+      <div className="m p-2">
+        <div className="flex  justify-between font-medium">
+          <h4 className="truncate text-lg ">{name}</h4>
+          <div className="flex items-center">
+            <FaStar className="text-green-600" />
             {avgRating}
           </div>
         </div>
         <div className="res-content">
-          <div className="content-bottom">
-            <p id="cuisines">{cuisines.join(", ")}</p>
-            <p id="deliveryTime">{sla.slaString} </p>
+          <div className="flex justify-between">
+            <p className="truncate w-[60%]">{cuisines.join(", ")}</p>
+            <p className="font-medium">{sla.slaString} </p>
           </div>
           <p>{costForTwo}</p>
         </div>
