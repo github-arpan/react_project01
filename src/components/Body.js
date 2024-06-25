@@ -41,7 +41,7 @@ export const Body = () => {
   return listOfRestaurants?.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body lg:mx-28 sm:mx-10">
+    <div className="body lg:mx-36 sm:mx-10 mx-10">
       <div className=" flex justify-center search m-4 p-4">
         <input
           type="text"

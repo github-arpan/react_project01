@@ -34,7 +34,7 @@ export const Header = () => {
             <Link to="/grocery">Grocery</Link>
           </li>
           <button
-            className=""
+            className="w-20 bg-green-600 rounded-lg text-white "
             onClick={() => {
               btnName === "login" ? setBtnName("logout") : setBtnName("login");
             }}
