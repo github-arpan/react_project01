@@ -1,5 +1,6 @@
 import RestaurantCard from "./RestaurantCard.js";
 import { useEffect, useState } from "react";
+import { IoSearchOutline } from "react-icons/io5";
 import { API_URL } from "../utils/contants.js";
 import Shimmer from "./Shimmer.js";
 import { Link } from "react-router-dom";
@@ -44,7 +45,7 @@ export const Body = () => {
       <div className=" flex justify-center search m-4 p-4">
         <input
           type="text"
-          className=" w-80 border border-solid border-black py-2 px-3 "
+          className=" w-80 border-y border-l border-black-50  rounded-l-md py-2 px-3 "
           placeholder="Find What u like"
           value={searchText}
           onChange={(e) => {
@@ -52,7 +53,7 @@ export const Body = () => {
           }}
         />
         <button
-          className="border border-solid border-black py-2 px-3 ml-2 bg-green-400 rounded-md"
+          className=" py-2 px-3  bg-green-400 rounded-r-md"
           onClick={() => {
             const filteredRestaurant = listOfRestaurants.filter((res) =>
               res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -60,13 +61,13 @@ export const Body = () => {
             setFilteredRestaurant(filteredRestaurant);
           }}
         >
-          Search
+          <IoSearchOutline className="text-xl" />
         </button>
       </div>
 
       <div className="m-2">
         <button
-          className="border border-solid border-black p-2 ml-14 "
+          className="border border-solid border-black p-2 ml-14 rounded-md bg-gray-300 "
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
               (res) => res.info.avgRating > 4
@@ -77,7 +78,7 @@ export const Body = () => {
           Top Rated
         </button>
       </div>
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap justify-center ">
         {filteredRestaurant?.map((Restaurant) => (
           <Link
             key={Restaurant?.info?.id}

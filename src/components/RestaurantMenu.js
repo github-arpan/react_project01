@@ -30,7 +30,7 @@ const RestaurantMenu = () => {
   if (resInfo === null) return <Shimmer />;
 
   return (
-    <div className="mx-[20%] my-2">
+    <div className="mx-[20%] my-10">
       <div className="resMenu">
         <div className="menu-header">
           <h1 className="text-3xl font-medium my-2">{name} </h1>
@@ -54,8 +54,8 @@ const RestaurantMenu = () => {
         <ul>
           {itemCards?.map((item) => (
             <div key={item.card.info.id} className=" ">
-              <div className=" flex justify-between my-2">
-                <div className="my-4 max-w-[80%]">
+              <div className=" flex justify-between my-2 py-2 border-b border-black-50">
+                <div className="my-4 max-w-[80%]  ">
                   <div className="menu-list-price">
                     <div className="font-medium">{item.card.info.name}</div>
                     <div className="flex items-center mb-2">

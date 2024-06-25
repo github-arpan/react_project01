@@ -12,23 +12,25 @@ export const Header = () => {
 
       <div className="flex items-center   ">
         <ul className="flex justify-evenly w-[500px]  p-2 text-xl ">
-          <li className="">
+          <li className="border-b border-transparent hover:border-black">
             <Link to="/" className="link">
               Home
             </Link>
           </li>
-          <li>
+          <li className="border-b border-transparent hover:border-black">
             <Link to="/about" className="link">
               About Us
             </Link>
           </li>
-          <li>
+          <li className="border-b border-transparent hover:border-black">
             <Link to="/contact" className="link">
               Contact Us
             </Link>
           </li>
-          <li>Cart</li>
-          <li>
+          <li className="border-b border-transparent hover:border-black">
+            Cart
+          </li>
+          <li className="border-b border-transparent hover:border-black">
             <Link to="/grocery">Grocery</Link>
           </li>
           <button

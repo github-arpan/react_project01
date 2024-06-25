@@ -7,7 +7,7 @@ const RestaurantCard = (props) => {
     resData.info;
 
   return (
-    <div className=" m-2 p-2 w-[300px]">
+    <div className=" m-2 p-2 w-[300px] hover:shadow-2xl shadow-black rounded-xl ">
       <div className=" ">
         <img
           className=" h-[220px] w-[300px] object-cover rounded-xl "
@@ -15,7 +15,7 @@ const RestaurantCard = (props) => {
         />
       </div>
 
-      <div className="m p-2">
+      <div className="m p-2  ">
         <div className="flex  justify-between font-medium">
           <h4 className="truncate text-lg ">{name}</h4>
           <div className="flex items-center">
