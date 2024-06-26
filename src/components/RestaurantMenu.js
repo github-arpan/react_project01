@@ -1,15 +1,15 @@
-import { CDN_URL } from "../utils/contants";
 import { useParams } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import Shimmer from "./Shimmer";
-import { MdOutlineCurrencyRupee } from "react-icons/md";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
 
   const resInfo = useRestaurantMenu(resId);
+  const [showIndex, setShowIndex] = useState(0);
 
   const {
     name,
@@ -57,8 +57,13 @@ const RestaurantMenu = () => {
           </div>
         </div>
       </div>
-      {categories.map((category) => (
-        <RestaurantCategory data={category?.card?.card} />
+      {categories.map((category, index) => (
+        <RestaurantCategory
+          key="category?.card?.card?.title"
+          data={category?.card?.card}
+          showItems={index === showIndex ? true : false}
+          setShowIndex={() => setShowIndex(index)}
+        />
       ))}
     </div>
   );
