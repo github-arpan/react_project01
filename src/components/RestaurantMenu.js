@@ -4,6 +4,7 @@ import { FaStar } from "react-icons/fa";
 import Shimmer from "./Shimmer";
 import { MdOutlineCurrencyRupee } from "react-icons/md";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -26,13 +27,19 @@ const RestaurantMenu = () => {
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
       ?.itemCards?.card?.info || {};
 
-  console.log(itemCards);
+  const categories =
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (c) =>
+        c.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+
   if (resInfo === null) return <Shimmer />;
 
   return (
-    <div className="mx-[20%] my-10">
+    <div className="w-2/3 my-10 mx-auto">
       <div className="resMenu">
-        <div className="menu-header">
+        <div className="mb-14">
           <h1 className="text-3xl font-medium my-2">{name} </h1>
           <div className="menuHeader-content">
             <h3 className="flex items-center my-2 font-medium">
@@ -49,38 +56,10 @@ const RestaurantMenu = () => {
             </div>
           </div>
         </div>
-
-        <h2 className="text-3xl my-6">Menu</h2>
-        <ul>
-          {itemCards?.map((item) => (
-            <div key={item.card.info.id} className=" ">
-              <div className=" flex justify-between my-2 py-2 border-b border-black-50">
-                <div className="my-4 max-w-[80%]  ">
-                  <div className="menu-list-price">
-                    <div className="font-medium">{item.card.info.name}</div>
-                    <div className="flex items-center mb-2">
-                      {" "}
-                      <MdOutlineCurrencyRupee className="rupee-icon" />
-                      {item.card.info.price / 100 ||
-                        item.card.info.defaultPrice / 100}
-                    </div>
-                  </div>
-                  <div>
-                    <p className="  ">{item.card.info.description}</p>
-                  </div>
-                </div>
-                <div className="h-[144px] w-[156px]">
-                  <img
-                    className="rounded-lg h-[144px] w-[156px]"
-                    alt="menu photo"
-                    src={CDN_URL + item.card.info.imageId}
-                  />
-                </div>
-              </div>
-            </div>
-          ))}
-        </ul>
       </div>
+      {categories.map((category) => (
+        <RestaurantCategory data={category?.card?.card} />
+      ))}
     </div>
   );
 };
