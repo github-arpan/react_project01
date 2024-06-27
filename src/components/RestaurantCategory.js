@@ -5,8 +5,9 @@ import { useState } from "react";
 const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
   const handleClick = () => {
     setShowIndex();
+    console.log("click");
   };
-  console.log(data);
+
   return (
     <div className="bg-gray-100 shadow-lg p-4 my-4 ">
       <div
@@ -16,7 +17,7 @@ const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
         <span className="font-bold">
           {data.title} ({data.itemCards.length})
         </span>
-        <span>
+        <span className="">
           <FaChevronDown />
         </span>
       </div>
