@@ -12,8 +12,8 @@ export const Header = () => {
         <img className="w-20 " src={LOGO_URL} />
       </div>
 
-      <div className="flex items-center w-1/3   ">
-        <ul className="flex  p-2  text-xl ">
+      <div className="flex items-center lg:w-2/4   ">
+        <ul className="flex  p-2  text-xl  ">
           <li className="border-b border-transparent hover:border-black mx-4 ">
             <Link to="/" className="link">
               Home
