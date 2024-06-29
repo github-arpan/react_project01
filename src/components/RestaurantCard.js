@@ -7,10 +7,10 @@ const RestaurantCard = (props) => {
     resData.info;
 
   return (
-    <div className=" m-2 p-2 lg:w-[300px] lg:h-[320px] h-[220px] w-[200px] hover:shadow-2xl shadow-black rounded-xl ">
+    <div className=" m-2 p-2 xl:w-[300px] xl:h-[320px] h-[220px] w-[200px] hover:shadow-2xl shadow-black rounded-xl ">
       <div className=" ">
         <img
-          className=" lg:h-[220px] h-[120px] w-[100%] object-cover rounded-xl "
+          className=" xl:h-[220px] h-[120px] w-[100%] object-cover rounded-xl "
           src={CDN_URL + cloudinaryImageId}
         />
       </div>
@@ -25,10 +25,10 @@ const RestaurantCard = (props) => {
         </div>
         <div className="res-content">
           <div className="flex justify-between">
-            <p className="truncate w-[60%] lg:text-lg text-sm ">
+            <p className="truncate w-[60%] xl:text-lg text-sm ">
               {cuisines.join(", ")}
             </p>
-            <p className="font-medium lg:text-lg text-xs ">{sla.slaString} </p>
+            <p className="font-medium xl:text-lg text-xs ">{sla.slaString} </p>
           </div>
           <p>{costForTwo}</p>
         </div>
