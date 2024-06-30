@@ -33,10 +33,12 @@ export const Header = () => {
               Contact Us
             </Link>
           </li>
-          <li className="flex border-b border-transparent hover:border-black  mr-4">
+          <li className="flex border-b border-transparent hover:border-black mr-4">
             <Link to="/cart">
-              <RiShoppingCart2Fill className="text-lg mt-1 mr-1" />
-              <span className="   ">{cartItem.length}</span>
+              <div>
+                <RiShoppingCart2Fill className="text-lg mt-1" />
+                {cartItem.length}
+              </div>
             </Link>
           </li>
           <li className="border-b border-transparent hover:border-black mr-4">
