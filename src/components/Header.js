@@ -11,7 +11,7 @@ export const Header = () => {
   const cartItem = useSelector((store) => store.cart.items);
   console.log(cartItem);
   return (
-    <div className="flex justify-between border-b border-black p-2 fixed w-full top-0 z-10 bg-white">
+    <div className="flex justify-between border-b border-gray-200 p-2 fixed w-full top-0 z-10 bg-white shadow-md">
       <div className="logo-container">
         <Link to="/">
           <img className="w-20 " src={LOGO_URL} />
@@ -20,22 +20,22 @@ export const Header = () => {
 
       <div className=" flex items-center ">
         <ul className=" flex p-2  text-xl  ">
-          <li className="border-b border-transparent hover:border-black mr-6 ">
+          <li className="border-b border-transparent hover:border-gray-400 mr-6 ">
             <Link to="/" className="link">
               Home
             </Link>
           </li>
-          <li className="border-b border-transparent hover:border-black mr-6">
+          <li className="border-b border-transparent hover:border-gray-400  mr-6">
             <Link to="/about" className="link">
               About Us
             </Link>
           </li>
-          <li className="border-b border-transparent hover:border-black mr-6">
+          <li className="border-b border-transparent hover:border-gray-400  mr-6">
             <Link to="/contact" className="link">
               Contact Us
             </Link>
           </li>
-          <li className="border-b border-transparent hover:border-black mr-6">
+          <li className="border-b border-transparent hover:border-gray-400  mr-6">
             <Link to="/cart">
               <div className="w-8 h-10  relative">
                 <GiShoppingCart className="text-3xl " />
@@ -45,7 +45,7 @@ export const Header = () => {
               </div>
             </Link>
           </li>
-          <li className="border-b border-transparent hover:border-black mr-6">
+          <li className="border-b border-transparent hover:border-gray-400  mr-6">
             <Link to="/grocery">Grocery</Link>
           </li>
           <button
@@ -56,9 +56,7 @@ export const Header = () => {
           >
             {btnName}
           </button>
-          <li className="border-b border-transparent hover:border-black mr-6">
-            {loggedInUser}
-          </li>
+          <li className=" mr-6">{loggedInUser}</li>
         </ul>
       </div>
     </div>
