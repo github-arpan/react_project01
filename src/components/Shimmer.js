@@ -6,7 +6,7 @@ const Shimmer = () => {
     );
   }
   return (
-    <div className="flex flex-wrap lg:mx-28 my-16 justify-center  ">
+    <div className="flex flex-wrap lg:mx-28 my-16 justify-center mt-28 ">
       {shimmerContainer}
     </div>
   );

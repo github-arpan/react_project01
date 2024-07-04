@@ -1,7 +1,9 @@
 const Contact = () => {
   return (
     <div>
-      <h1 className="font-bold text-center text-xl p-2 m- 4">Contact Us</h1>
+      <h1 className="font-bold text-center text-xl p-2 m- 4 mt-28">
+        Contact Us
+      </h1>
       <form className="ml-10 mt-10">
         <input
           type="text"

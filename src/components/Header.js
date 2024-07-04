@@ -11,7 +11,7 @@ export const Header = () => {
   const cartItem = useSelector((store) => store.cart.items);
   console.log(cartItem);
   return (
-    <div className="flex justify-between border-b border-black p-2 ">
+    <div className="flex justify-between border-b border-black p-2 fixed w-full top-0 z-10 bg-white">
       <div className="logo-container">
         <Link to="/">
           <img className="w-20 " src={LOGO_URL} />

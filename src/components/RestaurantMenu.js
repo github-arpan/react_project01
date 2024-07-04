@@ -37,7 +37,7 @@ const RestaurantMenu = () => {
   if (resInfo === null) return <Shimmer />;
 
   return (
-    <div className="w-2/3 my-10 mx-auto">
+    <div className="w-2/3 my-10 mx-auto mt-28 ">
       <div className="resMenu">
         <div className="mb-14">
           <h1 className="text-3xl font-medium my-2">{name} </h1>
