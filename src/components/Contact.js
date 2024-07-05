@@ -1,10 +1,10 @@
 const Contact = () => {
   return (
-    <div>
+    <div className="h-screen">
       <h1 className="font-bold text-center text-xl p-2 m- 4 mt-28">
         Contact Us
       </h1>
-      <form className="ml-10 mt-10">
+      <form className="ml-10 mt-10 ">
         <input
           type="text"
           placeholder="Enter your Name"

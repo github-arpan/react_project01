@@ -2,7 +2,7 @@ import AboutInfoClass from "./AboutInfo.";
 
 const About = () => {
   return (
-    <div className="about">
+    <div className="mt-28 h-screen">
       <h1>About</h1>
       <AboutInfoClass
         name={"Arpan Chakraborty"}

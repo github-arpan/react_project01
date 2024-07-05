@@ -9,7 +9,7 @@ const Cart = () => {
     dispatch(clearCart());
   };
   return (
-    <div className="text-center p-4 m-6 mt-28">
+    <div className="text-center p-4 m-6 mt-28 min-h-lvh">
       <h1 className="font-bold text-2xl ">Cart</h1>
       <div className="w-6/12 m-auto">
         <button

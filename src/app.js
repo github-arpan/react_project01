@@ -11,6 +11,7 @@ import Shimmer from "./components/Shimmer";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
+import Footer from "./components/footer";
 
 const Grocery = lazy(() => import("./components/Grocery"));
 
@@ -20,6 +21,7 @@ const AppLayout = () => {
       <div className="app">
         <Header />
         <Outlet />
+        <Footer />
       </div>
     </Provider>
   );
