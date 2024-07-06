@@ -17,7 +17,9 @@ export const Body = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(API_URL);
+      const response = await fetch(
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.831457&lng=91.2867777&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

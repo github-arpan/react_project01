@@ -50,6 +50,7 @@ export const Header = () => {
           </li>
           <button
             className="w-20 bg-green-600 rounded-lg text-white mr-6 "
+            data-testid="loginbtn"
             onClick={() => {
               btnName === "login" ? setBtnName("logout") : setBtnName("login");
             }}

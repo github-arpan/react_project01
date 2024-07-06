@@ -1,8 +1,8 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
+import appStore from "../utils/appStore.js";
 import { Header } from "../components/Header";
 import { BrowserRouter } from "react-router-dom";
-import appStore from "../utils/appStore.js";
 import "@testing-library/jest-dom";
 
 it("Should render header compnent with login button", () => {
@@ -14,9 +14,7 @@ it("Should render header compnent with login button", () => {
     </BrowserRouter>
   );
 
-  const login = screen.getByRole("button", {
-    name: /login/i,
-  });
+  const login = screen.getByRole("button");
   expect(login).toBeInTheDocument();
 });
 
@@ -29,10 +27,11 @@ it("Should change login button to Logout button when click", () => {
     </BrowserRouter>
   );
 
-  const loginButton = screen.getByRole("Button", { name: /login/ });
+  const loginButton = screen.getByRole("button", { name: "login" });
 
   fireEvent.click(loginButton);
-  const logoutButton = screen.getByText("Logout");
+
+  const logoutButton = screen.getByRole("button", { name: "logout" });
 
   expect(logoutButton).toBeInTheDocument();
 });
