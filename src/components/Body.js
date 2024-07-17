@@ -17,9 +17,7 @@ export const Body = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.831457&lng=91.2867777&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-      );
+      const response = await fetch(API_URL);
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -43,7 +41,7 @@ export const Body = () => {
   return listOfRestaurants?.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body xl:mx-36 sm:mx-20 mx-10  mt-28 min-h-lvh">
+    <div className="body xl:mx-36 sm:mx-20 mx-10  mt-28 min-h-lvh mb-4">
       <div className=" flex justify-center search m-4 p-4 ">
         <input
           type="text"
@@ -69,7 +67,7 @@ export const Body = () => {
 
       <div className="m-2">
         <button
-          className="border border-solid border-black p-2 ml-14 rounded-md bg-gray-300 "
+          className=" p-2 ml-14 rounded-md bg-gray-300 "
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
               (res) => res.info.avgRating > 4

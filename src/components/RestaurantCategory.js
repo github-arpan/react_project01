@@ -5,7 +5,6 @@ import { useState } from "react";
 const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
   const handleClick = () => {
     setShowIndex();
-    console.log("click");
   };
 
   return (

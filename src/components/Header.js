@@ -1,15 +1,27 @@
 import { LOGO_URL } from "../utils/contants";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import UserContext from "../utils/UserContext";
+import UserProvider from "../utils/UserContext";
 import { useSelector } from "react-redux";
 import { GiShoppingCart } from "react-icons/gi";
 
 export const Header = () => {
   const [btnName, setBtnName] = useState("login");
-  const { loggedInUser } = useContext(UserContext);
+  const { loggedInUser, setLoggedInUser } = useContext(UserProvider);
   const cartItem = useSelector((store) => store.cart.items);
-  console.log(cartItem);
+
+  // const handleLogin = () => {
+  //   setLoggedInUser(true);
+  //   navigate("/");
+  // };
+  const handleLogout = () => {
+    setLoggedInUser(false);
+  };
+  const handleClick = () => {
+    if (loggedInUser) {
+      handleLogout();
+    }
+  };
   return (
     <div className="flex justify-between border-b border-gray-200 p-2 fixed w-full top-0 z-10 bg-white shadow-md ">
       <div className="logo-container">
@@ -45,19 +57,18 @@ export const Header = () => {
               </div>
             </Link>
           </li>
-          <li className="border-b border-transparent hover:border-gray-400  mr-6">
-            <Link to="/grocery">Grocery</Link>
-          </li>
-          <button
-            className="w-20 bg-green-600 rounded-lg text-white mr-6 "
-            data-testid="loginbtn"
-            onClick={() => {
-              btnName === "login" ? setBtnName("logout") : setBtnName("login");
-            }}
-          >
-            {btnName}
-          </button>
-          <li className=" mr-6">{loggedInUser}</li>
+          <Link to="/login">
+            <button
+              className="w-20 bg-green-600 rounded-lg text-white text-sm mr-6 py-1 "
+              value={btnName}
+              data-testid="loginbtn"
+              onClick={handleClick}
+            >
+              {loggedInUser ? "logout" : "login"}
+            </button>
+          </Link>
+
+          <li className=" mr-6">{loggedInUser ? loggedInUser.username : ""}</li>
         </ul>
       </div>
     </div>

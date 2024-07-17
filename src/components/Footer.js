@@ -2,9 +2,9 @@ const Footer = () => {
   return (
     <div className=" bg-slate-300  w-full">
       <div>
-        <h3 className="font-bold text-2xl ml-11 my-11 p-9">Hangry</h3>
+        <h3 className="font-bold text-2xl ml-11 p-9">Hangry</h3>
       </div>
-      <div className="flex justify-evenly">
+      <div className="flex justify-evenly border-b border-gray-400 pb-3">
         <ul>
           <li className="font-bold mb-3">ABOUT US</li>
           <li>Who We Are</li>
@@ -28,12 +28,13 @@ const Footer = () => {
         </ul>
       </div>
 
-      <div>
-        <p className="text-center my-6 py-6">
-          By continuing past this page, you agree to our Terms of Service,
-          Cookie Policy, Privacy Policy and Content Policies. All trademarks are
-          properties of their respective owners. 2024 © Hangry ™ Ltd. All rights
-          reserved.
+      <div className=" w-full  p-4">
+        <p className="w-full text-center">
+          Created with ❤️ By
+          <span className="font-bold">
+            <a href="https://github.com/github-arpan"> Arpan </a>
+          </span>
+          2024 © Hangry
         </p>
       </div>
     </div>
