@@ -23,35 +23,35 @@ export const Header = () => {
     }
   };
   return (
-    <div className="flex justify-between border-b border-gray-200 p-2 fixed w-full top-0 z-10 bg-white shadow-md ">
+    <div className="flex justify-between items-center border-b border-gray-200 p-2 fixed w-full top-0 z-10 bg-white shadow-md ">
       <div className="logo-container">
         <Link to="/">
-          <img className="w-20 " src={LOGO_URL} />
+          <img className="lg:w-20 w-10 " src={LOGO_URL} />
         </Link>
       </div>
 
       <div className=" flex items-center ">
-        <ul className=" flex p-2  text-xl  ">
-          <li className="border-b border-transparent hover:border-gray-400 mr-6 ">
+        <ul className=" flex items-center p-2  text-sm lg:text-xl  ">
+          <li className="border-b border-transparent hover:border-gray-400 lg:mr-6 mr-2 ">
             <Link to="/" className="link">
               Home
             </Link>
           </li>
-          <li className="border-b border-transparent hover:border-gray-400  mr-6">
+          <li className="border-b border-transparent hover:border-gray-400  lg:mr-6 mr-2 ">
             <Link to="/about" className="link">
               About Us
             </Link>
           </li>
-          <li className="border-b border-transparent hover:border-gray-400  mr-6">
+          <li className="border-b border-transparent hover:border-gray-400  lg:mr-6 mr-2 ">
             <Link to="/contact" className="link">
               Contact Us
             </Link>
           </li>
-          <li className="border-b border-transparent hover:border-gray-400  mr-6">
+          <li className="border-b border-transparent hover:border-gray-400  lg:mr-6 mr-2 ">
             <Link to="/cart">
               <div className="w-8 h-10  relative">
-                <GiShoppingCart className="text-3xl " />
-                <span className="absolute top-1/3 bg-red-500 text-white text-sm h-5 w-5 rounded-full flex justify-center items-center">
+                <GiShoppingCart className="lg:text-3xl text-xl absolute top-2" />
+                <span className="absolute top-2/4 bg-red-500 text-white text-sm lg:h-5 h-3 lg:w-5 w-3 rounded-full flex justify-center items-center">
                   {cartItem.length}
                 </span>
               </div>
@@ -59,7 +59,7 @@ export const Header = () => {
           </li>
           <Link to="/login">
             <button
-              className="w-20 bg-green-600 rounded-lg text-white text-sm mr-6 py-1 "
+              className="lg:w-20 w-14 bg-green-600 rounded-lg text-white text-sm lg:mr-6 mr-2  py-1 active:scale-95"
               value={btnName}
               data-testid="loginbtn"
               onClick={handleClick}
@@ -68,7 +68,9 @@ export const Header = () => {
             </button>
           </Link>
 
-          <li className=" mr-6">{loggedInUser ? loggedInUser.username : ""}</li>
+          <li className=" lg:mr-6 mr-2 ">
+            {loggedInUser ? loggedInUser.username : ""}
+          </li>
         </ul>
       </div>
     </div>

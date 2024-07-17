@@ -39,7 +39,7 @@ const ItemList = ({ items }) => {
             />
             <div className="relative bottom-8 left-7 py-2   ">
               <button
-                className="py-2 px-6  text-green-600 border border-gray-300 bg-white shadow-lg font-bold rounded-md hover:bg-gray-200"
+                className="py-2 px-6  text-green-600 border border-gray-300 bg-white shadow-lg font-bold rounded-md hover:bg-gray-200 active:scale-95"
                 onClick={() => handleAddItem(item)}
               >
                 ADD
