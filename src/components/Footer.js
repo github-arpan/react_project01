@@ -2,7 +2,9 @@ const Footer = () => {
   return (
     <div className=" bg-slate-300  w-full">
       <div>
-        <h3 className="font-bold text-2xl ml-11 p-9">Hangry</h3>
+        <h3 className="font-bold md:text-2xl text-lg md:ml-11 ml-5 md:p-9 p-4">
+          Hangry
+        </h3>
       </div>
       <div className="flex justify-evenly border-b border-gray-400 pb-3">
         <ul>

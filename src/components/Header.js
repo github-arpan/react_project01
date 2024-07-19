@@ -1,19 +1,15 @@
 import { LOGO_URL } from "../utils/contants";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import UserProvider from "../utils/UserContext";
 import { useSelector } from "react-redux";
 import { GiShoppingCart } from "react-icons/gi";
+import { FaCircle } from "react-icons/fa";
 
 export const Header = () => {
-  const [btnName, setBtnName] = useState("login");
   const { loggedInUser, setLoggedInUser } = useContext(UserProvider);
   const cartItem = useSelector((store) => store.cart.items);
 
-  // const handleLogin = () => {
-  //   setLoggedInUser(true);
-  //   navigate("/");
-  // };
   const handleLogout = () => {
     setLoggedInUser(false);
   };
@@ -31,23 +27,23 @@ export const Header = () => {
       </div>
 
       <div className=" flex items-center ">
-        <ul className=" flex items-center p-2  text-sm lg:text-xl  ">
-          <li className="border-b border-transparent hover:border-gray-400 lg:mr-6 mr-2 ">
+        <ul className=" flex items-center space-x-4 w-full p-2  text-sm lg:text-xl  ">
+          <li className="border-b border-transparent hover:border-gray-400  mr-2 ">
             <Link to="/" className="link">
               Home
             </Link>
           </li>
-          <li className="border-b border-transparent hover:border-gray-400  lg:mr-6 mr-2 ">
+          <li className="border-b border-transparent hover:border-gray-400   mr-2 ">
             <Link to="/about" className="link">
               About Us
             </Link>
           </li>
-          <li className="border-b border-transparent hover:border-gray-400  lg:mr-6 mr-2 ">
+          <li className="border-b border-transparent hover:border-gray-400  mr-2 ">
             <Link to="/contact" className="link">
               Contact Us
             </Link>
           </li>
-          <li className="border-b border-transparent hover:border-gray-400  lg:mr-6 mr-2 ">
+          <li className="border-b border-transparent hover:border-gray-400   mr-2 ">
             <Link to="/cart">
               <div className="w-8 h-10  relative">
                 <GiShoppingCart className="lg:text-3xl text-xl absolute top-2" />
@@ -59,8 +55,8 @@ export const Header = () => {
           </li>
           <Link to="/login">
             <button
-              className="lg:w-20 w-14 bg-green-600 rounded-lg text-white text-sm lg:mr-6 mr-2  py-1 active:scale-95"
-              value={btnName}
+              className="lg:w-20 w-14 bg-green-600 rounded-lg text-white text-sm  py-1 active:scale-95"
+              // value={btnName}
               data-testid="loginbtn"
               onClick={handleClick}
             >
@@ -68,8 +64,15 @@ export const Header = () => {
             </button>
           </Link>
 
-          <li className=" lg:mr-6 mr-2 ">
-            {loggedInUser ? loggedInUser.username : ""}
+          <li className="min-w-12 ">
+            {loggedInUser ? (
+              <span className="flex items-center">
+                <FaCircle className="text-[8px] text-green-600 mr-1" />
+                {loggedInUser.username}
+              </span>
+            ) : (
+              ""
+            )}
           </li>
         </ul>
       </div>
