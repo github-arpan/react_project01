@@ -9,7 +9,6 @@ const About = () => {
       .then((res) => res.json())
       .then((data) => {
         setUserData(data);
-        console.log(data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -22,7 +21,13 @@ const About = () => {
         <div>
           <h1 className="text-center font-bold mb-4">Developed By </h1>
           <div>
-            <img className="h-80" src={userData.avatar_url} alt="User Avatar" />
+            <a href="https://github.com/github-arpan">
+              <img
+                className="h-80"
+                src={userData.avatar_url}
+                alt="User Avatar"
+              />
+            </a>
           </div>
           <div className="mt-6">
             <p className="font-bold text-xl mb-2">Name : {userData.name}</p>

@@ -45,7 +45,7 @@ export const Body = () => {
       <div className=" flex justify-center search m-4 p-4 ">
         <input
           type="text"
-          className=" w-80 border-y border-l border-black-50  rounded-l-md py-2 px-3 "
+          className=" w-80 border-y border-l border-black-50  rounded-l-md py-2 px-3 hover:border-orange-400"
           placeholder="Find What u like"
           value={searchText}
           onChange={(e) => {
@@ -53,7 +53,7 @@ export const Body = () => {
           }}
         />
         <button
-          className=" py-2 px-3  bg-green-400 rounded-r-md"
+          className=" py-2 px-3 active:scale-95  bg-green-400 rounded-r-md"
           onClick={() => {
             const filteredRestaurant = listOfRestaurants.filter((res) =>
               res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -61,7 +61,7 @@ export const Body = () => {
             setFilteredRestaurant(filteredRestaurant);
           }}
         >
-          <IoSearchOutline className="text-xl" />
+          <IoSearchOutline className="text-xl " />
         </button>
       </div>
 

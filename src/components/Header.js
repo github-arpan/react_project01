@@ -64,16 +64,16 @@ export const Header = () => {
             </button>
           </Link>
 
-          <li className="min-w-12 ">
-            {loggedInUser ? (
+          {loggedInUser ? (
+            <li className="min-w-12 ">
               <span className="flex items-center">
                 <FaCircle className="text-[8px] text-green-600 mr-1" />
                 {loggedInUser.username}
               </span>
-            ) : (
-              ""
-            )}
-          </li>
+            </li>
+          ) : (
+            ""
+          )}
         </ul>
       </div>
     </div>
